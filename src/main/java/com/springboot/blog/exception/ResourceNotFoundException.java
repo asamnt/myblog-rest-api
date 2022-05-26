@@ -1,8 +1,9 @@
 package com.springboot.blog.exception;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException{
     private String resourceName;
     private String fieldName;
@@ -15,7 +16,7 @@ public class ResourceNotFoundException extends RuntimeException{
         this.fieldValue = fieldValue;
     }
 
-    //Getter methods - we dont need setter methods as we are using Constructor
+    //Getter methods - we don't need setter methods as we are using Constructor
     public String getResourceName() {
         return resourceName;
     }
